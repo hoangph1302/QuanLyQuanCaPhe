@@ -1,0 +1,12 @@
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\bin\Release\QuanLyQuanCaPhe.exe.config
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\bin\Release\QuanLyQuanCaPhe.exe
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\bin\Release\QuanLyQuanCaPhe.pdb
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Release\QuanLyQuanCaPhe.csprojAssemblyReference.cache
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Release\QuanLyQuanCaPhe.ChangePass.resources
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Release\QuanLyQuanCaPhe.login.resources
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Release\QuanLyQuanCaPhe.Profile.resources
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Release\QuanLyQuanCaPhe.Properties.Resources.resources
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Release\QuanLyQuanCaPhe.TableManager.resources
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Release\QuanLyQuanCaPhe.csproj.GenerateResource.cache
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Release\QuanLyQuanCaPhe.exe
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Release\QuanLyQuanCaPhe.pdb
