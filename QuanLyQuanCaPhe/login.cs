@@ -52,5 +52,15 @@ namespace QuanLyQuanCaPhe
         {
 
         }
+
+        private void buttonSignUp_Click(object sender, EventArgs e)
+        {
+            SignUp formSignUp = new SignUp();
+            this.Hide();
+            formSignUp.ShowDialog();
+            this.Show();
+           
+
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace QuanLyQuanCaPhe
         public TableManager()
         {
             InitializeComponent();
+            textBoxTime.Text = DateTime.Now.ToString();
         }
 
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,5 +35,10 @@ namespace QuanLyQuanCaPhe
             this.Close();
         }
 
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin formAdimin = new Admin();
+            formAdimin.ShowDialog();
+        }
     }
 }

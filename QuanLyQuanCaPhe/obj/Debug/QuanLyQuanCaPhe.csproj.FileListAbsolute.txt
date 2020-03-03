@@ -10,3 +10,5 @@ C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Debug\QuanLyQuan
 C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.TableManager.resources
 C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Profile.resources
 C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.ChangePass.resources
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Admin.resources
+C:\Users\hoang\source\repos\QuanLyQuanCaPhe\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.SignUp.resources
