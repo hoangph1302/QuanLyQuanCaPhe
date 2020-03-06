@@ -80,6 +80,7 @@
             // 
             // buttonSignIn
             // 
+            this.buttonSignIn.Enabled = false;
             this.buttonSignIn.Location = new System.Drawing.Point(295, 133);
             this.buttonSignIn.Name = "buttonSignIn";
             this.buttonSignIn.Size = new System.Drawing.Size(75, 23);
@@ -104,6 +105,7 @@
             this.textBoxPass.Size = new System.Drawing.Size(124, 20);
             this.textBoxPass.TabIndex = 1;
             this.textBoxPass.UseSystemPasswordChar = true;
+            this.textBoxPass.TextChanged += new System.EventHandler(this.textBoxPass_TextChanged);
             // 
             // label2
             // 
@@ -130,6 +132,7 @@
             this.textBoxUserName.Name = "textBoxUserName";
             this.textBoxUserName.Size = new System.Drawing.Size(124, 20);
             this.textBoxUserName.TabIndex = 1;
+            this.textBoxUserName.TextChanged += new System.EventHandler(this.textBoxUserName_TextChanged);
             // 
             // label1
             // 
@@ -180,6 +183,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBoxUserName;
         private System.Windows.Forms.Label label1;
+
     }
 }
 

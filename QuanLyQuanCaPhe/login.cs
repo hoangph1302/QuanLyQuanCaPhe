@@ -16,6 +16,7 @@ namespace QuanLyQuanCaPhe
         public login()
         {
             InitializeComponent();
+
         }
 
         void RunTableManager()
@@ -59,7 +60,22 @@ namespace QuanLyQuanCaPhe
             this.Hide();
             formSignUp.ShowDialog();
             this.Show();
-           
+   
+        }
+
+        private void textBoxUserName_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxPass.Text != "" && textBoxUserName.Text != "")
+                buttonSignIn.Enabled = true;
+            else buttonSignIn.Enabled = false;
+        }
+
+        private void textBoxPass_TextChanged(object sender, EventArgs e)
+        {
+
+            if (textBoxPass.Text != "" && textBoxUserName.Text != "")
+                buttonSignIn.Enabled = true;
+            else buttonSignIn.Enabled = false;
 
         }
     }

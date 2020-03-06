@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using QuanLyQuanCaPhe.Data_DAO_;
 
 namespace QuanLyQuanCaPhe
 {
@@ -15,6 +17,7 @@ namespace QuanLyQuanCaPhe
         public Admin()
         {
             InitializeComponent();
+            loadData();
         }
 
         private void buttonWatchPass_Click(object sender, EventArgs e)
@@ -24,5 +27,19 @@ namespace QuanLyQuanCaPhe
                 textBoxPass.UseSystemPasswordChar = false;
             else textBoxPass.UseSystemPasswordChar = true;
         }
+
+        void loadData()
+        {
+            string query = "SELECT * FROM dbo.Accout";
+
+            DataProvider dataAccount = new DataProvider();
+            dataGridViewAccount.DataSource = dataAccount.ExecuteQuery(query);
+    
+
+
+
+        }
+
+       
     }
 }

@@ -61,6 +61,7 @@
     <Compile Include="ChanglePass.Designer.cs">
       <DependentUpon>ChanglePass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data%28DAO%29\DataProvider.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
