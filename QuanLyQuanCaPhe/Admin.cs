@@ -30,16 +30,11 @@ namespace QuanLyQuanCaPhe
 
         void loadData()
         {
-            string query = "SELECT * FROM dbo.Accout";
+            string query = " EXEC dbo.USP_GetAccountByName @UserName";
 
-            DataProvider dataAccount = new DataProvider();
-            dataGridViewAccount.DataSource = dataAccount.ExecuteQuery(query);
-    
-
-
+           
+            dataGridViewAccount.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { "Admin" });
 
         }
-
-       
     }
 }

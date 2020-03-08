@@ -1,17 +1,21 @@
-﻿namespace QuanLyQuanCaPhe
+﻿using System.Windows.Forms;
+
+namespace QuanLyQuanCaPhe
 {
-    partial class login
+  
+     partial class login
     {
+       
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+       protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
@@ -26,7 +30,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,7 +41,7 @@
             this.textBoxPass = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxUserName = new System.Windows.Forms.TextBox();
+            this.TextBoxUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -90,6 +94,7 @@
             this.buttonSignIn.Click += new System.EventHandler(this.buttonSignIn_Click);
             // 
             // panel3
+          
             // 
             this.panel3.Controls.Add(this.textBoxPass);
             this.panel3.Controls.Add(this.label2);
@@ -106,6 +111,7 @@
             this.textBoxPass.TabIndex = 1;
             this.textBoxPass.UseSystemPasswordChar = true;
             this.textBoxPass.TextChanged += new System.EventHandler(this.textBoxPass_TextChanged);
+         
             // 
             // label2
             // 
@@ -119,20 +125,21 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBoxUserName);
+            this.panel2.Controls.Add(this.TextBoxUserName);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(55, 23);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(315, 44);
             this.panel2.TabIndex = 1;
             // 
-            // textBoxUserName
             // 
-            this.textBoxUserName.Location = new System.Drawing.Point(130, 12);
-            this.textBoxUserName.Name = "textBoxUserName";
-            this.textBoxUserName.Size = new System.Drawing.Size(124, 20);
-            this.textBoxUserName.TabIndex = 1;
-            this.textBoxUserName.TextChanged += new System.EventHandler(this.textBoxUserName_TextChanged);
+            // 
+            this.TextBoxUserName.Location = new System.Drawing.Point(130, 12);
+            this.TextBoxUserName.Name = "textBoxUserName";
+     
+            this.TextBoxUserName.Size = new System.Drawing.Size(124, 20);
+            this.TextBoxUserName.TabIndex = 1;
+            this.TextBoxUserName.TextChanged += new System.EventHandler(this.textBoxUserName_TextChanged);
             // 
             // label1
             // 
@@ -143,6 +150,7 @@
             this.label1.Size = new System.Drawing.Size(105, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Đăng Nhập";
+             
             // 
             // login
             // 
@@ -168,6 +176,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+     
 
         }
 
@@ -184,6 +193,8 @@
         private System.Windows.Forms.TextBox textBoxUserName;
         private System.Windows.Forms.Label label1;
 
+        public object formLogin { get; private set; }
+        public TextBox TextBoxUserName { get => textBoxUserName; private set => textBoxUserName = value; }
     }
 }
 

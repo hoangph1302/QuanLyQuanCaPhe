@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyQuanCaPhe.Data_DAO_;
+using QuanLyQuanCaPhe.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +14,35 @@ namespace QuanLyQuanCaPhe
 {
     public partial class TableManager : Form
     {
+        public login formLogin = new login();
         public TableManager()
         {
             InitializeComponent();
             textBoxTime.Text = DateTime.Now.ToString();
+            loadTable();
         }
+
+        #region Method
+        void loadTable()
+        {
+           List<Table> tableList = TableDAO.Instance.loadListTable();
+
+            foreach ( Table item in tableList)
+            {
+                Button bttn = new Button();
+                bttn.Text = item.Name + "\n" + item.Status;
+                bttn.Width = 80;
+                bttn.Height = 80;
+                if (item.Status == "Trống")
+                    bttn.BackColor = Color.Pink;
+                else bttn.BackColor = Color.DarkSalmon;
+                flowLayoutPanelTable.Controls.Add(bttn);
+
+            }
+        }
+        #endregion
+
+        #region Event
 
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -40,5 +66,8 @@ namespace QuanLyQuanCaPhe
             Admin formAdimin = new Admin();
             formAdimin.ShowDialog();
         }
+        #endregion
     }
+
 }
+

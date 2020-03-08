@@ -57,12 +57,12 @@
             this.flowLayoutPanelTable = new System.Windows.Forms.FlowLayoutPanel();
             this.listView2 = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxTime = new System.Windows.Forms.TextBox();
-            this.textBoxType = new System.Windows.Forms.TextBox();
             this.textBoxDisplayName = new System.Windows.Forms.TextBox();
+            this.textBoxType = new System.Windows.Forms.TextBox();
+            this.textBoxTime = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -87,7 +87,6 @@
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
-            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
@@ -311,6 +310,7 @@
             // 
             // flowLayoutPanelTable
             // 
+            this.flowLayoutPanelTable.AutoScroll = true;
             this.flowLayoutPanelTable.Location = new System.Drawing.Point(9, 183);
             this.flowLayoutPanelTable.Name = "flowLayoutPanelTable";
             this.flowLayoutPanelTable.Size = new System.Drawing.Size(398, 426);
@@ -338,45 +338,15 @@
             this.panel1.Size = new System.Drawing.Size(362, 125);
             this.panel1.TabIndex = 0;
             // 
-            // label6
+            // textBoxDisplayName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 19);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 16);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Người phục vụ:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(64, 49);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 16);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Chức vụ:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(5, 76);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 16);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Ngày giờ phục vụ:";
-            // 
-            // textBoxTime
-            // 
-            this.textBoxTime.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBoxTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTime.Enabled = false;
-            this.textBoxTime.Location = new System.Drawing.Point(131, 78);
-            this.textBoxTime.Name = "textBoxTime";
-            this.textBoxTime.Size = new System.Drawing.Size(174, 13);
-            this.textBoxTime.TabIndex = 13;
+            this.textBoxDisplayName.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBoxDisplayName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDisplayName.Enabled = false;
+            this.textBoxDisplayName.Location = new System.Drawing.Point(131, 25);
+            this.textBoxDisplayName.Name = "textBoxDisplayName";
+            this.textBoxDisplayName.Size = new System.Drawing.Size(174, 13);
+            this.textBoxDisplayName.TabIndex = 15;
             // 
             // textBoxType
             // 
@@ -388,15 +358,45 @@
             this.textBoxType.Size = new System.Drawing.Size(174, 13);
             this.textBoxType.TabIndex = 14;
             // 
-            // textBoxDisplayName
+            // textBoxTime
             // 
-            this.textBoxDisplayName.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBoxDisplayName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxDisplayName.Enabled = false;
-            this.textBoxDisplayName.Location = new System.Drawing.Point(131, 25);
-            this.textBoxDisplayName.Name = "textBoxDisplayName";
-            this.textBoxDisplayName.Size = new System.Drawing.Size(174, 13);
-            this.textBoxDisplayName.TabIndex = 15;
+            this.textBoxTime.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBoxTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTime.Enabled = false;
+            this.textBoxTime.Location = new System.Drawing.Point(131, 78);
+            this.textBoxTime.Name = "textBoxTime";
+            this.textBoxTime.Size = new System.Drawing.Size(174, 13);
+            this.textBoxTime.TabIndex = 13;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(5, 76);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(120, 16);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Ngày giờ phục vụ:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(64, 49);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 16);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Chức vụ:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Người phục vụ:";
             // 
             // TableManager
             // 

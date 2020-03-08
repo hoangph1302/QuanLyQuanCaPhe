@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using QuanLyQuanCaPhe.Data_DAO_;
 
 namespace QuanLyQuanCaPhe
 {
@@ -16,8 +17,10 @@ namespace QuanLyQuanCaPhe
         public login()
         {
             InitializeComponent();
+           
 
         }
+
 
         void RunTableManager()
         {
@@ -25,13 +28,18 @@ namespace QuanLyQuanCaPhe
         }
         private void buttonSignIn_Click(object sender, EventArgs e)
         {
-      
-            TableManager formShow = new TableManager();
-            this.Hide();
-            formShow.ShowDialog();
-            textBoxUserName.Text = "";
-            textBoxPass.Text = "";
-            this.Show();
+            if (Account.Instance.passAuthentication(TextBoxUserName.Text, textBoxPass.Text))
+            {
+
+                TableManager formShow = new TableManager();
+                this.Hide();
+                formShow.ShowDialog();
+                textBoxUserName.Text = "";
+                textBoxPass.Text = "";
+                this.Show();
+
+            }
+            else MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -49,11 +57,6 @@ namespace QuanLyQuanCaPhe
             }
         }
 
-        private void buttonExit_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonSignUp_Click(object sender, EventArgs e)
         {
             SignUp formSignUp = new SignUp();
@@ -65,7 +68,7 @@ namespace QuanLyQuanCaPhe
 
         private void textBoxUserName_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxPass.Text != "" && textBoxUserName.Text != "")
+            if (textBoxPass.Text != "" && TextBoxUserName.Text != "")
                 buttonSignIn.Enabled = true;
             else buttonSignIn.Enabled = false;
         }
@@ -73,9 +76,11 @@ namespace QuanLyQuanCaPhe
         private void textBoxPass_TextChanged(object sender, EventArgs e)
         {
 
-            if (textBoxPass.Text != "" && textBoxUserName.Text != "")
+            if (textBoxPass.Text != "" && TextBoxUserName.Text != "")
                 buttonSignIn.Enabled = true;
             else buttonSignIn.Enabled = false;
+
+           
 
         }
     }
