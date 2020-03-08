@@ -55,7 +55,7 @@
             this.buttonSaleOff = new System.Windows.Forms.Button();
             this.buttonPay = new System.Windows.Forms.Button();
             this.flowLayoutPanelTable = new System.Windows.Forms.FlowLayoutPanel();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.listViewMenu = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxDisplayName = new System.Windows.Forms.TextBox();
             this.textBoxType = new System.Windows.Forms.TextBox();
@@ -63,6 +63,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -87,6 +91,7 @@
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
@@ -316,14 +321,20 @@
             this.flowLayoutPanelTable.Size = new System.Drawing.Size(398, 426);
             this.flowLayoutPanelTable.TabIndex = 8;
             // 
-            // listView2
+            // listViewMenu
             // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(413, 183);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(486, 426);
-            this.listView2.TabIndex = 9;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listViewMenu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listViewMenu.HideSelection = false;
+            this.listViewMenu.Location = new System.Drawing.Point(413, 183);
+            this.listViewMenu.Name = "listViewMenu";
+            this.listViewMenu.Size = new System.Drawing.Size(418, 426);
+            this.listViewMenu.TabIndex = 9;
+            this.listViewMenu.UseCompatibleStateImageBehavior = false;
+            this.listViewMenu.View = System.Windows.Forms.View.Details;
             // 
             // panel1
             // 
@@ -398,6 +409,29 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Người phục vụ:";
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tên Món";
+            this.columnHeader1.Width = 138;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Số Lượng ";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 77;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Giá ";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 97;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Tổng Tiền";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 100;
+            // 
             // TableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,7 +439,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(911, 690);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.listViewMenu);
             this.Controls.Add(this.flowLayoutPanelTable);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
@@ -450,7 +484,7 @@
         private System.Windows.Forms.Button buttonSaleOff;
         private System.Windows.Forms.Button buttonPay;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTable;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView listViewMenu;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem1;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label5;
@@ -464,5 +498,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxDisplayName;
         private System.Windows.Forms.TextBox textBoxType;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

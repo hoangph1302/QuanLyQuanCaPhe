@@ -29,6 +29,7 @@ namespace QuanLyQuanCaPhe
 
             foreach ( Table item in tableList)
             {
+                
                 Button bttn = new Button();
                 bttn.Text = item.Name + "\n" + item.Status;
                 bttn.Width = 80;
@@ -37,12 +38,32 @@ namespace QuanLyQuanCaPhe
                     bttn.BackColor = Color.Pink;
                 else bttn.BackColor = Color.DarkSalmon;
                 flowLayoutPanelTable.Controls.Add(bttn);
+                bttn.Click += Bttn_Click;
+                bttn.Tag = item;
 
             }
         }
+
         #endregion
 
         #region Event
+
+        private void Bttn_Click(object sender, EventArgs e)
+        {
+     
+            List<MenuFood> listMenu = MenuDAO.Instance.GetListMenuByIdTable(((sender as Button).Tag as Table).ID);
+            foreach (MenuFood item in listMenu)
+            {
+                ListViewItem listItem = new ListViewItem(item.NameFood);
+                listItem.SubItems.Add((item.Count.ToString()));
+                listItem.SubItems.Add(item.Price.ToString());
+                listItem.SubItems.Add(item.TotalPrice.ToString());
+
+                listViewMenu.Items.Add(listItem);
+
+            }
+            
+        }
 
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -67,6 +88,8 @@ namespace QuanLyQuanCaPhe
             formAdimin.ShowDialog();
         }
         #endregion
+
+        
     }
 
 }

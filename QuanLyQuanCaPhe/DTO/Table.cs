@@ -14,10 +14,12 @@ namespace QuanLyQuanCaPhe.DTO
         public int ID { get => iD; set => iD = value; }
         public string Name { get => name; set => name = value; }
         public string Status { get => status; set => status = value; }
+        public string UserName { get => userName; set => userName = value; }
 
         private string name;
         private string status;
-        
+        private string userName;
+
         public Table(DataRow datarow)
         {
             this.ID = (int)datarow["id"];
