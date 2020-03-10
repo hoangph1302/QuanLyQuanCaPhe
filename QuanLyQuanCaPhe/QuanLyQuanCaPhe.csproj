@@ -63,9 +63,11 @@
     </Compile>
     <Compile Include="CodeFile1.cs" />
     <Compile Include="Data%28DAO%29\Account.cs" />
+    <Compile Include="Data%28DAO%29\CategoryDAO.cs" />
     <Compile Include="Data%28DAO%29\DataProvider.cs" />
     <Compile Include="Data%28DAO%29\MenuDAO.cs" />
     <Compile Include="Data%28DAO%29\TableDAO.cs" />
+    <Compile Include="DTO\Category.cs" />
     <Compile Include="DTO\MenuFood.cs" />
     <Compile Include="DTO\Table.cs" />
     <Compile Include="login.cs">

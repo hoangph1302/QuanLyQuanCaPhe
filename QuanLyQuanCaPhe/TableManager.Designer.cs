@@ -36,7 +36,7 @@
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPrice = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,16 +46,23 @@
             this.buttonAddFood = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxFood = new System.Windows.Forms.ComboBox();
+            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonSaleOff = new System.Windows.Forms.Button();
+            this.textBoxTotal = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.comboBoxSwitchTable = new System.Windows.Forms.ComboBox();
             this.buttonSwitchTable = new System.Windows.Forms.Button();
             this.numericUpDownSaleOff = new System.Windows.Forms.NumericUpDown();
-            this.buttonSaleOff = new System.Windows.Forms.Button();
             this.buttonPay = new System.Windows.Forms.Button();
             this.flowLayoutPanelTable = new System.Windows.Forms.FlowLayoutPanel();
             this.listViewMenu = new System.Windows.Forms.ListView();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxDisplayName = new System.Windows.Forms.TextBox();
             this.textBoxType = new System.Windows.Forms.TextBox();
@@ -63,16 +70,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBoxTableWatch = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSaleOff)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -82,15 +89,15 @@
             this.thôngTinTàiKhoảnToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(911, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1063, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.adminToolStripMenuItem.Text = "Chủ Quán";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
@@ -126,7 +133,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.comboBox4);
+            this.panel2.Controls.Add(this.comboBoxPrice);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.buttonSearch);
             this.panel2.Controls.Add(this.label4);
@@ -136,20 +143,21 @@
             this.panel2.Controls.Add(this.buttonAddFood);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.comboBoxFood);
+            this.panel2.Controls.Add(this.comboBoxCategory);
             this.panel2.Location = new System.Drawing.Point(413, 37);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(486, 128);
+            this.panel2.Size = new System.Drawing.Size(418, 128);
             this.panel2.TabIndex = 4;
             // 
-            // comboBox4
+            // comboBoxPrice
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(76, 101);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(172, 21);
-            this.comboBox4.TabIndex = 12;
+            this.comboBoxPrice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBoxPrice.FormattingEnabled = true;
+            this.comboBoxPrice.Location = new System.Drawing.Point(76, 101);
+            this.comboBoxPrice.Name = "comboBoxPrice";
+            this.comboBoxPrice.Size = new System.Drawing.Size(172, 21);
+            this.comboBoxPrice.TabIndex = 12;
             // 
             // label5
             // 
@@ -242,73 +250,99 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Danh mục";
             // 
-            // comboBox2
+            // comboBoxFood
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(76, 74);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 21);
-            this.comboBox2.TabIndex = 2;
+            this.comboBoxFood.FormattingEnabled = true;
+            this.comboBoxFood.Location = new System.Drawing.Point(76, 74);
+            this.comboBoxFood.Name = "comboBoxFood";
+            this.comboBoxFood.Size = new System.Drawing.Size(172, 21);
+            this.comboBoxFood.TabIndex = 2;
+            this.comboBoxFood.SelectedIndexChanged += new System.EventHandler(this.comboBoxFood_SelectedIndexChanged);
             // 
-            // comboBox1
+            // comboBoxCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(76, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 21);
-            this.comboBox1.TabIndex = 1;
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Location = new System.Drawing.Point(76, 38);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(172, 21);
+            this.comboBoxCategory.TabIndex = 1;
+            this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategory_SelectedIndexChanged);
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.buttonSaleOff);
+            this.panel4.Controls.Add(this.textBoxTotal);
+            this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.comboBoxSwitchTable);
             this.panel4.Controls.Add(this.buttonSwitchTable);
             this.panel4.Controls.Add(this.numericUpDownSaleOff);
-            this.panel4.Controls.Add(this.buttonSaleOff);
             this.panel4.Controls.Add(this.buttonPay);
-            this.panel4.Location = new System.Drawing.Point(413, 628);
+            this.panel4.Location = new System.Drawing.Point(837, 203);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(486, 50);
+            this.panel4.Size = new System.Drawing.Size(214, 352);
             this.panel4.TabIndex = 6;
+            // 
+            // buttonSaleOff
+            // 
+            this.buttonSaleOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.buttonSaleOff.Location = new System.Drawing.Point(6, 101);
+            this.buttonSaleOff.Name = "buttonSaleOff";
+            this.buttonSaleOff.Size = new System.Drawing.Size(75, 46);
+            this.buttonSaleOff.TabIndex = 12;
+            this.buttonSaleOff.Text = "Giảm Giá%";
+            this.buttonSaleOff.UseVisualStyleBackColor = true;
+            this.buttonSaleOff.Click += new System.EventHandler(this.buttonSaleOff_Click);
+            // 
+            // textBoxTotal
+            // 
+            this.textBoxTotal.Location = new System.Drawing.Point(93, 187);
+            this.textBoxTotal.Name = "textBoxTotal";
+            this.textBoxTotal.Size = new System.Drawing.Size(86, 20);
+            this.textBoxTotal.TabIndex = 10;
+            this.textBoxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(3, 187);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 16);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Tổng Tiền";
             // 
             // comboBoxSwitchTable
             // 
             this.comboBoxSwitchTable.FormattingEnabled = true;
-            this.comboBoxSwitchTable.Location = new System.Drawing.Point(19, 26);
+            this.comboBoxSwitchTable.Location = new System.Drawing.Point(93, 17);
             this.comboBoxSwitchTable.Name = "comboBoxSwitchTable";
-            this.comboBoxSwitchTable.Size = new System.Drawing.Size(75, 21);
+            this.comboBoxSwitchTable.Size = new System.Drawing.Size(86, 21);
             this.comboBoxSwitchTable.TabIndex = 10;
             // 
             // buttonSwitchTable
             // 
-            this.buttonSwitchTable.Location = new System.Drawing.Point(19, 3);
+            this.buttonSwitchTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.buttonSwitchTable.Location = new System.Drawing.Point(6, 3);
             this.buttonSwitchTable.Name = "buttonSwitchTable";
-            this.buttonSwitchTable.Size = new System.Drawing.Size(75, 22);
+            this.buttonSwitchTable.Size = new System.Drawing.Size(75, 46);
             this.buttonSwitchTable.TabIndex = 9;
             this.buttonSwitchTable.Text = "Chuyển bàn";
             this.buttonSwitchTable.UseVisualStyleBackColor = true;
             // 
             // numericUpDownSaleOff
             // 
-            this.numericUpDownSaleOff.Location = new System.Drawing.Point(217, 27);
+            this.numericUpDownSaleOff.Location = new System.Drawing.Point(93, 116);
             this.numericUpDownSaleOff.Name = "numericUpDownSaleOff";
-            this.numericUpDownSaleOff.Size = new System.Drawing.Size(75, 20);
+            this.numericUpDownSaleOff.Size = new System.Drawing.Size(86, 20);
             this.numericUpDownSaleOff.TabIndex = 8;
             this.numericUpDownSaleOff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // buttonSaleOff
-            // 
-            this.buttonSaleOff.Location = new System.Drawing.Point(217, 3);
-            this.buttonSaleOff.Name = "buttonSaleOff";
-            this.buttonSaleOff.Size = new System.Drawing.Size(75, 22);
-            this.buttonSaleOff.TabIndex = 7;
-            this.buttonSaleOff.Text = "Giảm giá(%)";
-            this.buttonSaleOff.UseVisualStyleBackColor = true;
-            // 
             // buttonPay
             // 
-            this.buttonPay.Location = new System.Drawing.Point(394, 3);
+            this.buttonPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.buttonPay.Location = new System.Drawing.Point(69, 246);
             this.buttonPay.Name = "buttonPay";
-            this.buttonPay.Size = new System.Drawing.Size(75, 38);
+            this.buttonPay.Size = new System.Drawing.Size(75, 46);
             this.buttonPay.TabIndex = 6;
             this.buttonPay.Text = "Thanh toán";
             this.buttonPay.UseVisualStyleBackColor = true;
@@ -324,10 +358,11 @@
             // listViewMenu
             // 
             this.listViewMenu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
             this.listViewMenu.HideSelection = false;
             this.listViewMenu.Location = new System.Drawing.Point(413, 183);
             this.listViewMenu.Name = "listViewMenu";
@@ -335,6 +370,36 @@
             this.listViewMenu.TabIndex = 9;
             this.listViewMenu.UseCompatibleStateImageBehavior = false;
             this.listViewMenu.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "STT";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 35;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Món Ăn";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 130;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Số Lượng";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 75;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Giá";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader5.Width = 80;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Thành tiền";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader6.Width = 94;
             // 
             // panel1
             // 
@@ -409,39 +474,56 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Người phục vụ:";
             // 
-            // columnHeader1
+            // panel3
             // 
-            this.columnHeader1.Text = "Tên Món";
-            this.columnHeader1.Width = 138;
+            this.panel3.Controls.Add(this.textBoxTableWatch);
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Location = new System.Drawing.Point(864, 27);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(199, 109);
+            this.panel3.TabIndex = 10;
             // 
-            // columnHeader2
+            // textBoxTableWatch
             // 
-            this.columnHeader2.Text = "Số Lượng ";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 77;
+            this.textBoxTableWatch.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTableWatch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTableWatch.Enabled = false;
+            this.textBoxTableWatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxTableWatch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.textBoxTableWatch.Location = new System.Drawing.Point(27, 59);
+            this.textBoxTableWatch.Multiline = true;
+            this.textBoxTableWatch.Name = "textBoxTableWatch";
+            this.textBoxTableWatch.Size = new System.Drawing.Size(143, 39);
+            this.textBoxTableWatch.TabIndex = 17;
+            this.textBoxTableWatch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // columnHeader3
+            // textBox1
             // 
-            this.columnHeader3.Text = "Giá ";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 97;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Tổng Tiền";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 100;
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.textBox1.HideSelection = false;
+            this.textBox1.Location = new System.Drawing.Point(27, 14);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(143, 39);
+            this.textBox1.TabIndex = 16;
+            this.textBox1.Text = "Hóa Đơn";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(911, 690);
+            this.ClientSize = new System.Drawing.Size(1063, 629);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listViewMenu);
             this.Controls.Add(this.flowLayoutPanelTable);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -455,9 +537,12 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSaleOff)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,18 +560,17 @@
         private System.Windows.Forms.Button buttonAddFood;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxFood;
+        private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox comboBoxSwitchTable;
         private System.Windows.Forms.Button buttonSwitchTable;
         private System.Windows.Forms.NumericUpDown numericUpDownSaleOff;
-        private System.Windows.Forms.Button buttonSaleOff;
         private System.Windows.Forms.Button buttonPay;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTable;
         private System.Windows.Forms.ListView listViewMenu;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem1;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBoxPrice;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Label label4;
@@ -498,9 +582,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxDisplayName;
         private System.Windows.Forms.TextBox textBoxType;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.TextBox textBoxTotal;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBoxTableWatch;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonSaleOff;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }

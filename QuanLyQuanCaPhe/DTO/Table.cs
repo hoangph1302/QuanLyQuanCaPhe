@@ -28,7 +28,7 @@ namespace QuanLyQuanCaPhe.DTO
         }
         public Table(int id, string name, string status)
         {
-            this.iD = id;
+            this.ID = id;
             this.Name = name;
             this.Status = status;
         }

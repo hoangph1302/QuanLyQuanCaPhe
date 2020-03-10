@@ -18,8 +18,8 @@ namespace QuanLyQuanCaPhe.Data_DAO_
         public List<MenuFood> GetListMenuByIdTable(int id)
         {
             List<MenuFood> listMenu = new List<MenuFood>();
-            string query = "SELECT f.nameFood, bf.coutFood,f.price,f.price*bf.coutFood AS total FROM dbo.BillInfo AS bf, " +
-                "dbo.Food AS f, dbo.Bill AS b, dbo.TableService AS t WHERE b.id = bf.idBill AND bf.idFood=f.id AND t.id=" + id.ToString();
+            string query = "SELECT t.nameTable,f.nameFood, bf.coutFood,f.price,f.price*bf.coutFood AS total FROM dbo.BillInfo AS bf, dbo.Food AS f, dbo.Bill AS b, dbo.TableService AS t " +
+                "WHERE b.id = bf.idBill AND bf.idFood = f.id AND t.id = b.idTable AND b.statusPay=0 AND t.id =" + id.ToString();
             foreach (System.Data.DataRow item in DataProvider.Instance.ExecuteQuery(query).Rows)
             {
                 listMenu.Add(new MenuFood(item));

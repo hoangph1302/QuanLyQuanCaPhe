@@ -17,7 +17,7 @@ namespace QuanLyQuanCaPhe
         public login()
         {
             InitializeComponent();
-           
+
 
         }
 
@@ -53,7 +53,7 @@ namespace QuanLyQuanCaPhe
                != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
-             
+
             }
         }
 
@@ -63,7 +63,7 @@ namespace QuanLyQuanCaPhe
             this.Hide();
             formSignUp.ShowDialog();
             this.Show();
-   
+
         }
 
         private void textBoxUserName_TextChanged(object sender, EventArgs e)
@@ -75,12 +75,13 @@ namespace QuanLyQuanCaPhe
 
         private void textBoxPass_TextChanged(object sender, EventArgs e)
         {
-
+            
             if (textBoxPass.Text != "" && TextBoxUserName.Text != "")
                 buttonSignIn.Enabled = true;
+          
             else buttonSignIn.Enabled = false;
 
-           
+
 
         }
     }

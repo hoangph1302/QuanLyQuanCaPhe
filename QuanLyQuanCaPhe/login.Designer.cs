@@ -2,10 +2,10 @@
 
 namespace QuanLyQuanCaPhe
 {
-  
-     partial class login
+
+    partial class login
     {
-       
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -15,7 +15,7 @@ namespace QuanLyQuanCaPhe
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-       protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
@@ -94,7 +94,7 @@ namespace QuanLyQuanCaPhe
             this.buttonSignIn.Click += new System.EventHandler(this.buttonSignIn_Click);
             // 
             // panel3
-          
+
             // 
             this.panel3.Controls.Add(this.textBoxPass);
             this.panel3.Controls.Add(this.label2);
@@ -111,7 +111,7 @@ namespace QuanLyQuanCaPhe
             this.textBoxPass.TabIndex = 1;
             this.textBoxPass.UseSystemPasswordChar = true;
             this.textBoxPass.TextChanged += new System.EventHandler(this.textBoxPass_TextChanged);
-         
+
             // 
             // label2
             // 
@@ -136,7 +136,7 @@ namespace QuanLyQuanCaPhe
             // 
             this.TextBoxUserName.Location = new System.Drawing.Point(130, 12);
             this.TextBoxUserName.Name = "textBoxUserName";
-     
+
             this.TextBoxUserName.Size = new System.Drawing.Size(124, 20);
             this.TextBoxUserName.TabIndex = 1;
             this.TextBoxUserName.TextChanged += new System.EventHandler(this.textBoxUserName_TextChanged);
@@ -150,7 +150,7 @@ namespace QuanLyQuanCaPhe
             this.label1.Size = new System.Drawing.Size(105, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Đăng Nhập";
-             
+
             // 
             // login
             // 
@@ -176,7 +176,7 @@ namespace QuanLyQuanCaPhe
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
-     
+
 
         }
 

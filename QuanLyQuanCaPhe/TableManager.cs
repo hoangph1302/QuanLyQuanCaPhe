@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,21 +17,25 @@ namespace QuanLyQuanCaPhe
     public partial class TableManager : Form
     {
         public login formLogin = new login();
+
+        int total;
+        string idCategory="1";
         public TableManager()
         {
             InitializeComponent();
-            textBoxTime.Text = DateTime.Now.ToString();
             loadTable();
+            loadCategory();
         }
 
         #region Method
         void loadTable()
         {
-           List<Table> tableList = TableDAO.Instance.loadListTable();
+            textBoxTime.Text = DateTime.Now.ToString();
+            List<Table> tableList = TableDAO.Instance.loadListTable();
 
             foreach ( Table item in tableList)
             {
-                
+
                 Button bttn = new Button();
                 bttn.Text = item.Name + "\n" + item.Status;
                 bttn.Width = 80;
@@ -42,6 +48,40 @@ namespace QuanLyQuanCaPhe
                 bttn.Tag = item;
 
             }
+
+
+        }
+
+        int Pay(int id)
+        {
+            listViewMenu.Items.Clear();
+
+            List<MenuFood> listMenu = MenuDAO.Instance.GetListMenuByIdTable(id);
+            total = 0;
+            int i = 0;
+            textBoxTableWatch.Text = "";
+            foreach (MenuFood item in listMenu)
+            {
+                i++;
+                ListViewItem listItem = new ListViewItem(i.ToString());
+                listItem.SubItems.Add((item.NameFood.ToString()));
+                listItem.SubItems.Add((item.Count.ToString()));
+                listItem.SubItems.Add(item.Price.ToString());
+                listItem.SubItems.Add(item.TotalPrice.ToString());
+                total += item.TotalPrice;
+                textBoxTableWatch.Text = item.NameTable;
+                listViewMenu.Items.Add(listItem);
+
+            }
+            return total;
+        }
+
+        void loadCategory()
+        {
+            comboBoxCategory.DataSource = CategoryDAO.Instance.getCategory();
+            comboBoxCategory.DisplayMember = "nameCategory";
+            
+
         }
 
         #endregion
@@ -50,19 +90,16 @@ namespace QuanLyQuanCaPhe
 
         private void Bttn_Click(object sender, EventArgs e)
         {
-     
-            List<MenuFood> listMenu = MenuDAO.Instance.GetListMenuByIdTable(((sender as Button).Tag as Table).ID);
-            foreach (MenuFood item in listMenu)
-            {
-                ListViewItem listItem = new ListViewItem(item.NameFood);
-                listItem.SubItems.Add((item.Count.ToString()));
-                listItem.SubItems.Add(item.Price.ToString());
-                listItem.SubItems.Add(item.TotalPrice.ToString());
+            numericUpDownSaleOff.Value=0;
+            int id = ((sender as Button).Tag as Table).ID;
+           
+            total=Pay(id);
 
-                listViewMenu.Items.Add(listItem);
+            //total = total - total * Convert.ToInt32(numericUpDownSaleOff.Value.ToString()) / 100;
+            CultureInfo cultureRu = new CultureInfo("vi-VN");
+            Thread.CurrentThread.CurrentCulture = cultureRu;
+            textBoxTotal.Text = total.ToString("c");
 
-            }
-            
         }
 
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -87,9 +124,40 @@ namespace QuanLyQuanCaPhe
             Admin formAdimin = new Admin();
             formAdimin.ShowDialog();
         }
+
+        private void buttonSaleOff_Click(object sender, EventArgs e)
+        {
+
+            total = total - total * Convert.ToInt32(numericUpDownSaleOff.Value.ToString()) / 100;
+            CultureInfo cultureRu = new CultureInfo("vi-VN");
+            Thread.CurrentThread.CurrentCulture = cultureRu;
+            textBoxTotal.Text = total.ToString("c");
+           
+        }
+
+
+
+
         #endregion
 
-        
+        private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBoxCategory.ValueMember = "id";
+            idCategory = comboBoxCategory.SelectedValue.ToString();
+            comboBoxFood.DataSource = CategoryDAO.Instance.getFood(idCategory);
+            comboBoxFood.DisplayMember = "nameFood";
+           
+        }
+
+        private void comboBoxFood_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBoxFood.ValueMember = "id";
+            string idFood = comboBoxFood.SelectedValue.ToString();
+            comboBoxPrice.DataSource = CategoryDAO.Instance.getPrice(idFood);
+            comboBoxPrice.DisplayMember = "price";
+        }
+
+       
     }
 
 }
