@@ -29,5 +29,11 @@ namespace QuanLyQuanCaPhe.Data_DAO_
           
             return res;
         }
+
+        public void CreatAccout(string displayName,string userName,string pass)
+        {
+
+            DataProvider.Instance.ExecuteQuery("EXEC dbo.USP_CREATACCOUNT @DisplayName = N'" + displayName + "', @UserName = N'" + userName + "', @Pass = N'" + pass + "' ");
+        }
     }
 }

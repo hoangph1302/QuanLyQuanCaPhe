@@ -42,7 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownCount = new System.Windows.Forms.NumericUpDown();
             this.buttonAddFood = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSaleOff)).BeginInit();
             this.panel1.SuspendLayout();
@@ -139,7 +139,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.comboBox3);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.numericUpDown1);
+            this.panel2.Controls.Add(this.numericUpDownCount);
             this.panel2.Controls.Add(this.buttonAddFood);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
@@ -207,18 +207,18 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Số lượng";
             // 
-            // numericUpDown1
+            // numericUpDownCount
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(359, 101);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numericUpDownCount.Location = new System.Drawing.Point(359, 101);
+            this.numericUpDownCount.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown1.TabIndex = 6;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownCount.Name = "numericUpDownCount";
+            this.numericUpDownCount.Size = new System.Drawing.Size(44, 20);
+            this.numericUpDownCount.TabIndex = 6;
+            this.numericUpDownCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // buttonAddFood
             // 
@@ -229,6 +229,7 @@
             this.buttonAddFood.TabIndex = 5;
             this.buttonAddFood.Text = "Thêm";
             this.buttonAddFood.UseVisualStyleBackColor = true;
+            this.buttonAddFood.Click += new System.EventHandler(this.buttonAddFood_Click);
             // 
             // label2
             // 
@@ -535,7 +536,7 @@
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSaleOff)).EndInit();
@@ -556,7 +557,7 @@
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDownCount;
         private System.Windows.Forms.Button buttonAddFood;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

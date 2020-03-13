@@ -20,17 +20,22 @@ namespace QuanLyQuanCaPhe
 
         int total;
         string idCategory="1";
+        int idTable;
         public TableManager()
         {
             InitializeComponent();
             loadTable();
             loadCategory();
+            textBoxTime.Text = DateTime.Now.ToString();
+            //MessageBox.Show(numericUpDownCount.Value.ToString());
+
+
         }
 
         #region Method
         void loadTable()
         {
-            textBoxTime.Text = DateTime.Now.ToString();
+            flowLayoutPanelTable.Controls.Clear();
             List<Table> tableList = TableDAO.Instance.loadListTable();
 
             foreach ( Table item in tableList)
@@ -48,6 +53,7 @@ namespace QuanLyQuanCaPhe
                 bttn.Tag = item;
 
             }
+           
 
 
         }
@@ -76,11 +82,19 @@ namespace QuanLyQuanCaPhe
             return total;
         }
 
+        void LoadBill(int id)
+        {
+            numericUpDownSaleOff.Value = 0;
+            total = Pay(id);
+            CultureInfo cultureRu = new CultureInfo("vi-VN");
+            Thread.CurrentThread.CurrentCulture = cultureRu;
+            textBoxTotal.Text = total.ToString("c");
+        }
+
         void loadCategory()
         {
             comboBoxCategory.DataSource = CategoryDAO.Instance.getCategory();
             comboBoxCategory.DisplayMember = "nameCategory";
-            
 
         }
 
@@ -90,15 +104,9 @@ namespace QuanLyQuanCaPhe
 
         private void Bttn_Click(object sender, EventArgs e)
         {
-            numericUpDownSaleOff.Value=0;
-            int id = ((sender as Button).Tag as Table).ID;
-           
-            total=Pay(id);
 
-            //total = total - total * Convert.ToInt32(numericUpDownSaleOff.Value.ToString()) / 100;
-            CultureInfo cultureRu = new CultureInfo("vi-VN");
-            Thread.CurrentThread.CurrentCulture = cultureRu;
-            textBoxTotal.Text = total.ToString("c");
+            idTable = ((sender as Button).Tag as Table).ID;
+            LoadBill(idTable);
 
         }
 
@@ -132,13 +140,8 @@ namespace QuanLyQuanCaPhe
             CultureInfo cultureRu = new CultureInfo("vi-VN");
             Thread.CurrentThread.CurrentCulture = cultureRu;
             textBoxTotal.Text = total.ToString("c");
-           
+
         }
-
-
-
-
-        #endregion
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -146,7 +149,7 @@ namespace QuanLyQuanCaPhe
             idCategory = comboBoxCategory.SelectedValue.ToString();
             comboBoxFood.DataSource = CategoryDAO.Instance.getFood(idCategory);
             comboBoxFood.DisplayMember = "nameFood";
-           
+
         }
 
         private void comboBoxFood_SelectedIndexChanged(object sender, EventArgs e)
@@ -157,7 +160,28 @@ namespace QuanLyQuanCaPhe
             comboBoxPrice.DisplayMember = "price";
         }
 
-       
+        private void buttonAddFood_Click(object sender, EventArgs e)
+        {
+
+            BillDAO.Instansce.InsertBillByIdTable(idTable);
+            comboBoxFood.ValueMember = "id";
+            int idFood = Convert.ToInt32(comboBoxFood.SelectedValue);
+            int idBill = new Bill(BillDAO.Instansce.getMaxIdBill().Rows[0]).ID;
+            int count =Convert.ToInt32(numericUpDownCount.Value);
+            BillDAO.Instansce.InsertBillInfor(idBill, idFood, count);
+            LoadBill(idTable);
+            TableDAO.Instance.ChangeStatus(idTable);
+            loadTable();
+            
+
+        }
+
+
+
+
+        #endregion
+
+
     }
 
 }

@@ -55,7 +55,7 @@ namespace QuanLyQuanCaPhe.Data_DAO_
         }
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
-            int data;
+            int data=0;
             string connectionStr = "Data Source=DESKTOP-JPB583J;Initial Catalog=QuanLyQuanCaPhe;Integrated Security=True";
             using (SqlConnection connectionAccount = new SqlConnection(connectionStr))
             {
@@ -74,8 +74,10 @@ namespace QuanLyQuanCaPhe.Data_DAO_
                         }
                     }
                 }
-
-                data = commandAccount.ExecuteNonQuery();
+                DataTable dataAccount = new DataTable();
+                //SqlDataAdapter adaterAccount = new SqlDataAdapter(commandAccount);
+                //adaterAccount.Fill(dataAccount);
+               data = commandAccount.ExecuteNonQuery() ;
                 connectionAccount.Close();
             }
             return data;

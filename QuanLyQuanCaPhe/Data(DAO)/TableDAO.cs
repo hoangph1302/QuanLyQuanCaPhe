@@ -31,6 +31,10 @@ namespace QuanLyQuanCaPhe.Data_DAO_
 
             return listTable;
         }
+        public void ChangeStatus(int id)
+        {
+            DataProvider.Instance.ExecuteQuery("UPDATE dbo.TableService SET statusTable=N'Có Người'WHERE id=" + id.ToString());
+        }
        
 
     }

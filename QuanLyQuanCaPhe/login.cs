@@ -18,6 +18,8 @@ namespace QuanLyQuanCaPhe
         {
             InitializeComponent();
 
+           // MessageBox.Show(DataProvider.Instance.ExecuteNonQuery("SELECT * FROM dbo.Accout WHERE username='Addtmin'").ToString());
+
 
         }
 
@@ -75,10 +77,10 @@ namespace QuanLyQuanCaPhe
 
         private void textBoxPass_TextChanged(object sender, EventArgs e)
         {
-            
+
             if (textBoxPass.Text != "" && TextBoxUserName.Text != "")
                 buttonSignIn.Enabled = true;
-          
+
             else buttonSignIn.Enabled = false;
 
 
